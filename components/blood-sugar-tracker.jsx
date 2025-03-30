@@ -80,7 +80,7 @@ export default function BloodSugarTracker() {
   };
 
   return (
-    <div className="grid gap-6 xl:grid-cols md:grid-cols-2 border border-purple-500">
+    <div className="grid gap-6 md:grid-cols-2 border border-purple-500">
       <Card>
         <CardHeader>
           <CardTitle>Input Blood Sugar Readings</CardTitle>
@@ -95,7 +95,7 @@ export default function BloodSugarTracker() {
                 <Label htmlFor="hour">Hour</Label>
                 <select
                   id="hour"
-                  className="flex h-10 w-[3/4] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   value={currentHour}
                   onChange={(e) =>
                     setCurrentHour(Number.parseInt(e.target.value))
@@ -108,7 +108,7 @@ export default function BloodSugarTracker() {
                   ))}
                 </select>
               </div>
-              <div className="space-y-2 ">
+              <div className="space-y-2">
                 <Label htmlFor="value">Blood Sugar (mg/dL)</Label>
                 <Input
                   id="value"
@@ -116,12 +116,11 @@ export default function BloodSugarTracker() {
                   placeholder="Enter value"
                   value={currentValue}
                   onChange={handleValueChange}
-                  className="w-[2/4]"
                 />
               </div>
             </div>
 
-            <Button onClick={updateReading} className="w-full bg-purple-500">
+            <Button onClick={updateReading} className="w-full">
               Update Reading
             </Button>
 
@@ -159,10 +158,10 @@ export default function BloodSugarTracker() {
                             <span
                               className={`inline-block px-2 py-1 rounded text-xs font-medium ${
                                 range === "low"
-                                  ? "bg-red-100 text-red-800"
+                                  ? "bg-red-300 text-red-800"
                                   : range === "high"
-                                  ? "bg-orange-100 text-orange-800"
-                                  : "bg-green-100 text-green-800"
+                                  ? "bg-orange-300 text-orange-800"
+                                  : "bg-green-300 text-green-800"
                               }`}
                             >
                               {range === "low"
