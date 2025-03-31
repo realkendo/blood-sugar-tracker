@@ -1,1 +1,0 @@
- NextJS blood sugar tracker
